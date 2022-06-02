@@ -85,8 +85,8 @@ function load_json_async(){
         try {
             if (!message.response_body.data) {
                 panelButtonText = new St.Label({
-                    text : "(USD: 1,00) = (BRL: " + _dollarQuotation + ")" + " * ",
-                    y_align: Clutter.ActorAlign.CENTER,
+                    text : "R$" + _dollarQuotation + " * ",
+                    y_align: Clutter.ActorAlign.LEFT,
                 });
                 panelButton.set_child(panelButtonText);
                 _httpSession.abort();
@@ -99,8 +99,8 @@ function load_json_async(){
             _dollarQuotation = _dollarQuotation[0] + "," + _dollarQuotation[1].substring(0,2);
    
             panelButtonText = new St.Label({
-                text : "(USD: 1,00) = (BRL: " + _dollarQuotation + ")",
-                y_align: Clutter.ActorAlign.CENTER,
+                text :  "R$" + _dollarQuotation,
+                y_align: Clutter.ActorAlign.LEFT,
             });
 
             panelButton.set_child(panelButtonText);
@@ -109,8 +109,8 @@ function load_json_async(){
 
         } catch (e) {
             panelButtonText = new St.Label({
-                text : "(USD: 1,00) = (BRL: " + _dollarQuotation + ")" + " * ",
-                y_align: Clutter.ActorAlign.CENTER,
+                text : text :  "R$" + _dollarQuotation + "*",
+                y_align: Clutter.ActorAlign.LEFT,
             });
 
             panelButton.set_child(panelButtonText);
